@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const connectDB = require("./config/db"); // Import the MongoDB connection
+const connectDB = require("../config/db"); // Import the MongoDB connection
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,8 +16,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
-const contactRoutes = require("./routes/contactRoutes");
-const inquiryRoutes = require("./routes/inquiryRoutes");
+const contactRoutes = require("../routes/contactRoutes");
+const inquiryRoutes = require("../routes/inquiryRoutes");
 
 app.use("/api/contact", contactRoutes);
 app.use("/api/inquiry", inquiryRoutes);
