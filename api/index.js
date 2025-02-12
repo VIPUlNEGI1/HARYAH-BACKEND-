@@ -12,9 +12,11 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middleware
-app.use(cors({
-    origin: 'https://hayah-frontend.vercel.app'
-  }));
+app.use(cors());
+
+// this is the new change
+app.options("*", cors())
+
 app.use(bodyParser.json());
 
 // Routes
